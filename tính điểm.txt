@@ -1,0 +1,84 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b,c,n,f[1000],s=0;
+int main ()
+{
+    cin>>a>>b>>c>>n;
+    f[1]=a;f[2]=b;f[3]=c;
+    sort(f+1,f+1+3,greater<ll>());
+    while(n--)
+    {
+        s+=f[1]
+        f[1]-=2;
+        sort(f+1,f+1+3,greater<ll>());
+    }
+    cout<<s;
+}
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b,c,n,d=0,e=0,f=0;
+    cin>>a>>b>>c>>n;
+    for (int i=1;i<=n;++i)
+    {
+        if (a>=b or a>=c)
+        {
+            d=a;
+            a=a-2;
+            cout<<d<<" "<<a<<endl;
+        }
+        else if (b>=a or b>=c)
+        {
+            e=b;
+            b=b-2;
+            cout<<e<<" "<<b<<endl;
+        }
+        else if (c>=a or c>=b)
+        {
+            f=c;
+            c=c-2;
+            cout<<f<<" "<<c<<endl;
+        }
+    }
+    cout<<d+e+f;
+}
+include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a;
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        for(int j=1;j<=i;j++) //chi so * bang chi so dong
+        {
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll k,i=1;
+int main ()
+{
+    cin>>k;
+    while(k!=1)
+    {
+        if(i%3==0 or i%5==0 or i%7==0)
+        {
+            k--;
+            i++;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    cout<<i;
+}

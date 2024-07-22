@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll n,i,l,r,q,s(0),k,f[100005];
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    nxn();
+    f[0]=0;
+    cin>>n>>q;
+    for (i=1;i<=n;i++)
+    {
+        cin>>k;
+        if (k>0) s+=k;
+        f[i]=s;
+    }
+    for (i=1;i<=q;i++)
+    {
+        cin>>l>>r;
+        cout<<f[r]-f[l-1]<<endl;
+    }
+}

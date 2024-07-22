@@ -1,0 +1,41 @@
+#pragma GCC optimze ("02")
+#pragma GCC optimize ("unroll-loops")
+#include<bits/stdc++.h>
+using namespace std ;
+int a,b,s(0),c;
+int main ()
+{
+    freopen("CAU1.inp","r",stdin);
+    freopen("CAU1.out","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>a>>b;
+    c=min(a,b);
+    for(int i=1;i<=c;i++)
+    {
+        if(a%i==0 and b%i==0)
+            s++;
+    }
+    cout<<s;
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll demuoc(ll a)
+{
+    ll s=0,m;
+    for(int i=1;i<=sqrt(a);i++)
+    {
+        if(a%i==0) s=s+2;
+    }
+    m=sqrt(a);
+    if(m*m==a) s=s-1;
+    return s;
+}
+int main ()
+{
+    ll a,b,n,m;
+    cin>>a>>b;
+    cout<<demuoc(__gcd(a,b));
+}

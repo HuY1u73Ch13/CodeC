@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+string s;
+set<int> a;
+int n, m;
+
+int main() {
+    cin>>n;
+    for(int i = 1; i <= n; i++)
+    {
+        int x;
+        cin>>s>>x;
+        if(s == "INSERT")
+            a.insert(x);
+        if(s == "DELETE")
+            a.erase(x);
+        if(s == "ASK")
+        {
+            auto it = a.find(x);
+            if(it != a.end())
+                cout<<"Yes"<<'\n';
+            else
+                cout<<"No"<<'\n';
+        }
+
+
+    }
+}

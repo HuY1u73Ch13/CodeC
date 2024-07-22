@@ -1,0 +1,40 @@
+ #include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+bool ktnt(ll a)
+{
+    if(a<2) return false ;
+    else for(int i=2;i<=sqrt(a);i++)
+    {
+        if(a%i==0) return false ;
+    }
+    return true;
+}
+ll tong(ll a)
+{
+    ll tam,s=0;
+    while(a!=0)
+    {
+        tam=a%10;
+        s=s+tam;
+        a=a/10;
+    }
+    return s;
+}
+int main ()
+{
+    ll a,b;
+    cin>>a;
+    if(a<11)
+    {
+        cout<<0;
+        return 0;
+    }
+    for(int i=11;i<=a;i++)
+    {
+        b=tong(i);
+        if(ktnt(b) and ktnt(i))
+            cout<<i<<" ";
+    }
+
+}

@@ -1,0 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+ double a, alpha, h;
+ cin >> a >> alpha >> h;
+ alpha = alpha * acos(-1) / 180;
+ printf("%.3f", h + a * tan(alpha));
+}

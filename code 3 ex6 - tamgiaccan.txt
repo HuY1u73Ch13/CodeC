@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll h;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>h;
+    for(int i=1;i<=h;i++)
+    {
+        for(int j=1;j<2*h;j++)
+        {
+            //cout<<i<<" "<<j<<"\n";;
+            if(abs(h-j)<=(i-1)) cout<<"*";
+            else cout<<" ";
+        }
+        cout<<"\n";
+    }
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll h,tam=1;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>h;
+    for(int i=1;i<=h;i++)
+    {
+        for(int j=1;j<2*h;j++)
+        {
+            //cout<<i<<" "<<j<<"\n";;
+            if(abs(h-j)<=(i-1)) {cout<<tam;tam++;}
+            else {cout<<" ";tam=1;}
+        }
+        cout<<"\n";
+    }
+}

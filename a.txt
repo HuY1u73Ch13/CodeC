@@ -1,0 +1,182 @@
+HOANGNHHE194526
+Huyhoang#26040205
+$ORT#_1n
+https://www.canva.com/?_showInviteeOnboarding
+https://laptrinhphothong.vn/Coder/Details/thaibao
+
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+int main () // su khac biet cua i++ va ++i
+{
+    int i=1;
+    int j=i++; // j lay gia tri ban dau cua i luc ma i chua duoc tang
+    int j=++i; // j lay gia tri cua i sau khi i tang
+    cout<<i;
+    cout<<endl<<j;
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    int a,b,c;
+    a=7;b=7;c=7;
+    cout<<(++a)*(c++)+2*(b++)*(c++)+(a++)*(++b);
+    //cout<<" "<<a++<<" "<<++b<<" "<<c++;
+    //cout<<endl<<(++a)+(b++);
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    int a,b,c,d1,d2,d3;
+    a=7;b=7;c=7;
+    d1=(++a)*(c++);
+    cout<<a<<" "<<b<<" "<<c<<" ";cout<<d1<<endl;
+    d2=d1+2*(b++)*(c++);
+    cout<<a<<" "<<b<<" "<<c<<" ";cout<<d2<<endl;
+    d3=d2+(a++)*(++b);
+    cout<<a<<" "<<b<<" "<<c<<" ";cout<<d3<<endl;
+    //cout<<" "<<a++<<" "<<++b<<" "<<c++;
+    //cout<<endl<<(++a)+(b++);
+}
+
+
+Để tìm hai số nguyên a và b, ta sẽ giải hệ phương trình từ các thông tin đã cho.
+
+Ta có hệ phương trình:
+
+(++a)(c++) + 2(b++)(c++) + (a++)(++b) = 116
+(++a) + (b++) = 12
+Ta bắt đầu bằng việc giải phương trình thứ hai để tìm giá trị của a và b.
+
+Thay b = 12 - (++a) vào phương trình thứ nhất:
+(++a) * (c++) + 2*(12 - (++a)) * (c++) + (a++) * (++(12 - (++a))) = 116
+
+Giải phương trình này:
+(++a) * (c++) + 2*(12 - (++a)) * (c++) + (a++) * (12 - (++a) + 1) = 116
+
+(++a) * 7 + 2*(12 - (++a)) * 8 + (a++) * (12 - (++a) + 1) = 116
+
+(++a) * 7 + 2*(12 - a - 1) * 8 + (a++) * (12 - a + 1) = 116
+
+(++a) * 7 + 2*(11 - a) * 8 + (a++) * (11 - a) = 116
+
+7a + 2(88 - 16a) + a(11 - a) = 116
+
+7a + 176 - 32a + 11a - a^2 = 116
+
+-22a - a^2 + 176 = 116
+
+a^2 + 22a - 60 = 0
+
+(a + 25)(a - 3) = 0
+
+a = -25 hoặc a = 3
+
+Nếu a = -25, thì từ phương trình thứ hai, b = 12 - (++a) = 12 - (-24) = 36. Tuy nhiên, giá trị âm không khả thi với số nguyên dương.
+
+include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    int a,b,c,d1,d2,d3;
+
+    a=7;b=2;c=7;
+
+    d1=(++a)*(c++);
+
+    cout<<a<<" "<<b<<" "<<c<<" "; cout<<d1<<endl;
+
+    d2=d1+2*(b++)*(c++);
+
+    cout<<a<<" "<<b<<" "<<c<<" "; cout<<d2<<endl;
+
+    d3=d2+(a++)*(++b);
+
+    cout<<a<<" "<<b<<" "<<c<<" "; cout<<d3<<endl;
+
+    cout<<(++a)+(b++);
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    int n,hc,hdv;
+    cin>>n;
+    hdv=n%10;
+    hc=n/10;
+    if(hc%2==1 and hdv%2==0) cout<<hc;
+    if(hc%2==1 and hdv%2==1) cout<<hc<<endl<<hdv;
+    if(hc%2==0 and hdv%2==1) cout<<hc<<endl<<hdv;
+    if(hc%2==0 and hdv%2==0) cout<<"khong co chu so le";
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+int n,m;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    //freopen("test.inp","r",stdin);
+    //freopen("test.out","w",stdout);
+    cin>>n>>m;
+    if(n<=9 and m<=9)
+    {
+        for(int i=n;i<=m;i++)
+        {
+            if(i==1) cout<<"one"<<"\n";
+            if(i==2) cout<<"two"<<"\n";
+            if(i==3) cout<<"three"<<"\n";
+            if(i==4) cout<<"four"<<"\n";
+            if(i==5) cout<<"five"<<"\n";
+            if(i==6) cout<<"six"<<"\n";
+            if(i==7) cout<<"seven"<<"\n";
+            if(i==8) cout<<"eight"<<"\n";
+            if(i==9) cout<<"nine"<<"\n";
+        }
+    }
+    if(n<=9 and m>9)
+    {
+        for(int i=n;i<=m;i++)
+        {
+            if(i==1) cout<<"one"<<"\n";
+            if(i==2) cout<<"two"<<"\n";
+            if(i==3) cout<<"three"<<"\n";
+            if(i==4) cout<<"four"<<"\n";
+            if(i==5) cout<<"five"<<"\n";
+            if(i==6) cout<<"six"<<"\n";
+            if(i==7) cout<<"seven"<<"\n";
+            if(i==8) cout<<"eight"<<"\n";
+            if(i==9) cout<<"nine"<<"\n";
+        }
+    }
+    if(m>=10)
+    {
+        for(int i=10;i<=m;i++)
+        {
+            if(i%2==0)
+            {
+                cout<<"even"<<"\n";
+            }
+            else
+            {
+                cout<<"odd"<<"\n";
+            }
+        }
+    }
+}
+
+
+

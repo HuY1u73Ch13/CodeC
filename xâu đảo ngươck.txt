@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll s,d=0;
+int main ()
+{
+    cin>>s;
+    while(s > 0)
+    {
+        d=d*10+s%10;
+        s=s/10;
+    }
+    cout <<d;
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string s;
+int f[10000005];
+int main ()
+{
+    cin>>s;
+    reverse(s.begin(),s.end());
+    cout<<s;
+}

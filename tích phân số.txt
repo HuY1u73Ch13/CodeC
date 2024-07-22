@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b,s=1,d=1,m,m1;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    while(cin>>a>>b)
+    {
+        if (b==0)
+        {
+            cout<<0;
+            return 0;
+        }
+        s=s*a;
+        d=d*b;
+        m1=__gcd(s,d);
+        s=s/m1;
+        d=d/m1;
+    }
+    m=__gcd(s,d);
+    cout<<s/m<<" "<<d/m;
+}

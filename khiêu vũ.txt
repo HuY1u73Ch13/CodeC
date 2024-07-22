@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define nmax 1000001
+using namespace std;
+long long n,a[nmax],nam[10000]={},nu[10000]={},k,s=0;
+int main()
+{
+    cin>>n>>k;
+    for(int i=1;i<=n;i++)
+        cin>>a[i];
+    for(int i=1;i<=n;i++)
+    {
+        if(a[i]>0)
+            nam[a[i]]++;
+        if(a[i]<0)
+            nu[abs(a[i])]++;
+    }
+    for(int i=1500;i<=2000;i++)
+    {
+        if(nam[i]>0)
+        for(int j=0;j<=k;j++)
+        {
+            s+=nam[i]*nu[i-j];
+        }
+    }
+    cout<<s;
+}
+    

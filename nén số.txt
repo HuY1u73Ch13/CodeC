@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string a;
+ll s(1);
+int main ()
+{
+    cin>>a;
+    for(int i=0;i<=a.size()-1;i++)
+    {
+        if(a[i]==a[i+1])s++;
+        if(s==1 and a[i]!=a[i-1]) cout<<1<<a[i];
+        if(s>1 and a[i]!=a[i+1]){cout<<s<<a[i-1];s=1;}
+    }
+}

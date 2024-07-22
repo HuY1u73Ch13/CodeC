@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    nxn();
+    string s;
+    cin>>s;
+    bool b[150];
+    memset(b,true,sizeof(b));
+    for (ll i=0;i<s.length();i++)
+    {
+        if (b[int(s[i])]==true)
+        {
+            cout<<s[i];
+            b[int(s[i])]=false;
+        }
+    }
+}
+    

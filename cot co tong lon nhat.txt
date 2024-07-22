@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b[10005][10005],s[10005],mn=-1e18;
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    for(int j=1;j<=a;j++)
+    cin>>b[i][j];
+    for(int i=1;i<=a;i++)
+    for(int j=1;j<=a;j++)
+    {
+        s[i]=s[i]+b[i][j];
+    }
+    for(int i=1;i<=a;i++)
+    {
+        mn=max(s[i],mn);
+    }
+    cout<<mn;
+}
+    

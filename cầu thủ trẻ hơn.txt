@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+#define ull unsigned long long
+using namespace std;
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+struct st
+{
+    string ten;
+    ull can,cao,tuoi;
+};
+int main()
+{
+    nxn();
+    st a[10];
+    ull i=2;
+    cin>>a[1].ten>>a[1].can>>a[1].cao>>a[1].tuoi;
+    cin>>a[2].ten>>a[2].can>>a[2].cao>>a[2].tuoi;
+    if (a[1].tuoi<a[2].tuoi) i=1;
+    cout<<a[i].ten<<" "<<a[i].can<<" "<<a[i].cao<<" "<<a[i].tuoi;
+}
+    

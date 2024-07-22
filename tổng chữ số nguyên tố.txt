@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll s=0,c=0,n;
+string a;
+int main()
+{
+
+    {
+    cin>>a;
+    for(int i=0;i<a.size();i++)
+    {
+        c=c+a[i]-48;
+    }
+    n=c;
+    }
+    if(n<2)
+    {
+        cout<<"NO";
+        return 0;
+    }
+    for(int i=2;i<=sqrt(n);i++)
+    if(n%i==0)
+        {
+            s++;
+        }
+    if(s == 0)
+    cout<<"YES";
+    else
+    cout<<"NO";
+}

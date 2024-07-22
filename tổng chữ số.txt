@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll s=0;
+string a;
+int main ()
+{
+    cin>>a;
+    for (int i=0;i<a.size();i++)
+    {
+        s=s+a[i]-48;
+    }
+    cout<<s;
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll n,s(0),tam;
+int main()
+{
+    cin >> n;
+    while (n != 0)
+    {
+        tam = n % 10;
+        s += tam;
+        n /= 10;
+    }
+    
+}

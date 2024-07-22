@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+#define N 1000000
+#define ll long long
+using namespace std ;
+string s;
+ll n,s1(0),da[N+1],db[N+1],a[N+1],sum[N+1],c[2*N];
+void sub1()
+{
+    for(int i=0;i<=n-2;i++)
+    for(int j=i+1;j<=n-1;j++)
+    {
+        int da=0,db=0;
+        for(int k=i;k<=j;k++)
+        {
+            //da+=(s[k]=='a' ? 1:0);
+            //db=(s[k]=='b' ? 1:0);
+            if(s[k]=='a') da+=1;
+            else db+=1;
+        }
+        if(da==db) s1++;
+    }
+
+}
+void sub2()
+{
+     s=" "+s;
+     for(int i=1;i<=n;i++)
+     {
+         da[i]=da[i-1]+(s[i]=='a' ? 1 : 0);
+         db[i]=db[i-1]+(s[i]=='b' ? 1 : 0);
+     }
+     for(int l=1;l<=n-1;l++)
+        for(int r=l+1;r<=n;r++)
+        if(da[r]-da[l-1]==db[r]-db[l-1]) s1++;
+}
+void sub3()
+{
+     s=" "+s;
+     for(int i=1;i<=n;i++)
+     {
+         a[i]=(s[i]=='a' ? 1:-1);
+     }
+     for(int i=1;i<=n;i++)
+        sum[i]=sum[i-1]+a[i];
+     for(int i=0;i<=n;i++)
+        c[sum[i]+1000000]++;
+     for(int i=0;i<=2*N;i++)
+        s1+=c[i*1LL]*(c[i]*1LL-1)/2;
+
+}
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n;
+    cin>>s;
+    if(n<1) sub1();
+    if(n<3) sub2();
+    else sub3();
+    cout<<s1;
+}

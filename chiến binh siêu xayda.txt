@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+#define N 1000001
+#define ll long long 
+using namespace std ;
+ll n,m,L[N],R[N];
+int main ()
+{
+    cin>>n>>m;
+    for(int i=1;i<=n;i++)
+    {
+        L[i]=i-1;
+        R[i]=i+1;
+    }
+    R[n]=0;
+    
+}
+#include <bits/stdc++.h>
+#define nmax 100000
+using namespace std;
+int n, q;
+int s[nmax+5], dem1[nmax+5], dem2[nmax+5], dem3[nmax+5];
+
+int main()
+{
+      cin>>n>>q; 
+      dem1[0] = dem2[0] = dem3[0] = 0;
+      for(int i = 1; i<=n;i++)
+      {
+            cin>>s[i];
+            dem1[i] = dem1[i-1]; 
+            dem2[i] = dem2[i-1]; 
+            dem3[i] = dem3[i-1];
+            if(s[i]==1) dem1[i]++;
+            else if(s[i]==2) dem2[i]++;
+            else dem3[i]++;
+      }
+      while(q--)
+      {
+            int a, b;
+            cin>>a>>b;
+            int d1 = dem1[b] - dem1[a-1];
+            int d2 = dem2[b] - dem2[a-1];
+            int d3 = dem3[b] - dem3[a-1];
+            cout<<d1<<" "<<d2<<" "<<d3<<endl;
+      }
+
+}

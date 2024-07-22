@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+string s;
+ll a;
+int main()
+{
+    cin>>s>>a;
+    stringstream geek(s);
+    int x = 0;
+    geek >> x;
+    cout<<x+a;
+}

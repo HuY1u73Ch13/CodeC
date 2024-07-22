@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll t,n,f[10000];
+bool check(ll n)
+{
+    for(int i=2;i<=sqrt(n);i++)
+    {
+        if(n%i==0) return false;
+    }
+    return true;
+}
+void nt6()
+{
+    ll k=2,n=1;
+    while(n<=10001)
+    {
+        if(check(k) and check(k+6))
+        {
+            f[n]=k;
+            n++;
+        }
+        k++;
+    }
+}
+int main ()
+{
+    nt6();
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        cout<<f[n]<<" "<<f[n]+6<<"\n";
+    }
+
+}

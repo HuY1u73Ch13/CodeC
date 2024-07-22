@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    nxn();
+    ll n,q,i,p;
+    cin>>n;
+    ll f[n+5];
+    f[0]=0;
+    for (i=1;i<=n;i++)
+    {
+        cin>>p;
+        f[i]=f[i-1]+p;
+    }
+    cin>>q;
+    for (i=1;i<=q;i++)
+    {
+        cin>>p;
+        cout<<f[p]<<endl;
+    }
+}

@@ -1,0 +1,11 @@
+ll pow(ll a, ll n)
+{
+    if(n == 1) {
+        return a;
+    } else {
+        if(n % 2 == 0)
+            return pow(a, n/2) * pow(a, n/2);
+        else
+            return pow(a, n/2) * pow(a, n/2) * a;
+    }
+}

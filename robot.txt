@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+const int L[]={3,0,1,2};
+const int R[]={1,2,3,0};
+const int B[]={2,3,0,1};
+const int tx[]={0,1,0,-1};
+const int ty[]={1,0,-1,0};
+#define ll long long
+using namespace std ;
+int n,h=0,x=0,y=0;
+string s;
+int main ()
+{
+    cin>>n>>s;
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]=='L') h=L[h];
+        if(s[i]=='R') h=R[h];
+        if(s[i]=='B') h=B[h];
+        x+=tx[h];
+        y+=ty[h];
+    }
+    cout<<x<<" "<<y;
+}

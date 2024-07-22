@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll scpgan(ll n)
+{
+    ll  sqrtn = sqrt((ll)n);
+    if(sqrtn * sqrtn == n) return n;
+    ll n1 = sqrtn * sqrtn ;
+    ll n2 = (sqrtn + 1) * (sqrtn + 1);
+
+    ll d1 = n - n1;
+    ll d2 = n2 - n;
+    if(d1 > d2)
+        return n2;
+    return n1;
+}
+int main ()
+{
+    ll a;
+    cin>>a;
+    cout<<scpgan(a);
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+bool check(ll x)
+{
+	ll k=sqrt (x);
+	return (k*k==x);
+
+}
+int main()
+{ 
+    ll n,cp1,cp2;
+    cin>>n;
+    cp1=n; cp2=n;
+    while (! check (cp1)) cp1++;
+    while (! check (cp2)) cp2--;
+    if ( cp1 -n> n-cp2)
+    cout<<cp2;
+    else cout<<cp1;
+}

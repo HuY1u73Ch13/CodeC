@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define N 1000000
+using namespace std;
+ll a[N],b[N],cc[N],k,m,l,n,kq=0;
+int tknpmax(int x, int d, int c)
+{
+    ll k=0;
+    while(d<=c)
+    {
+        int g=(d+c)/2;
+        if (cc[g]<x)
+        {
+            k=g;
+            d=g+1;
+        }
+        else c=g-1;
+    }
+    return k;
+}
+int tknpmin(int x,int d,int c)
+{
+    ll k=0;
+    while(d<=c)
+    {
+        int g=(d+c)/2;
+        if (cc[g]>x)
+        {
+            k=g;
+            c=g-1;
+        }
+        else d=g+1;
+    }
+    return k;
+}
+int main()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    for(int i=1;i<=n;i++)cin>>a[i];
+    for(int i=1;i<=n;i++)cin>>b[i];
+    for(int i=1;i<=n;i++)cin>>cc[i];
+    sort(cc+1,cc+n+1);
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            k=a[i]+b[j];
+            m=tknpmax(k,1,n);
+            k=abs(a[i]-b[j]);
+            l=tknpmin(k,1,n);
+            if (l!=0 && m!=0) kq+=m-l+1;
+        }
+    }
+    cout<<kq;
+}

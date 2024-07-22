@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+#define nmax 1000000
+#define ll long long
+bool NT[nmax+5];
+unsigned a,b,t,f[nmax+5],s(0),c;
+using namespace std ;
+ll demuoc(ll a)
+{
+    ll s=0,m;
+    for(int i=1;i<=sqrt(a);i++)
+    {
+        if(a%i==0) s=s+2;
+    }
+    m=sqrt(a);
+    if(m*m==a) s=s-1;
+    return s;
+}
+void sang()
+{
+    memset(NT,true,sizeof(NT));
+    NT[0]=NT[1]=false ;
+    for(int i=1;i<=sqrt(nmax);i++)
+    if(NT[i])
+    for(int j=i*i;j<=nmax;j=j+i)
+    NT[j]=false;
+}
+int main()
+{
+
+    freopen("Cau1b.inp","r",stdin);
+    freopen("Cau1b.out","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    sang();
+    ll a,b;
+    cin>>a>>b;
+    for(int i=a;i<=b;i++)
+    {
+        if(NT[i]==false)
+        {
+            c=demuoc(i);
+            if(NT[c]==true) s++;
+        }
+    }
+    cout<<s;
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll n,a[100002],k,t;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    //freopen("N1003B.inp","r",stdin);
+    //freopen("N1003B.out","w",stdout);
+    cin>>n>>k;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=1;i<=n;i++)
+    {
+        t=__gcd(t,a[i]);
+    }
+    //cout<<t;
+    for(int j=2;j<=n;j++)
+    {
+        if(t%j==0)
+        {
+            t=j;
+            break;
+        }
+    }
+    cout<<k-k%t;
+}

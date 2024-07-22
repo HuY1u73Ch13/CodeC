@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll n,s=0;
+string b[100005];
+int main ()
+{
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>b[i];
+        for(int j=0;j<b[i].size();j++)
+        s=s+int(b[j]-48);
+    }
+    cout<<s;
+}

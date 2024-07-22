@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string s;
+ll n,l,r;
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n>>s;
+    for(l=0;l<n;l++)
+    {
+        if(s[l]!='<') break;
+    }
+    for(r=n-1;r>0;r--)
+    {
+        if(s[r]!='>') break;
+    }
+    int t1=0;// SL ">"
+    int t2=0;// chờ về đúng chỗ 
+    for(int i=l;i<=r-1;i++)
+    {
+        if(s[i]=='>')
+        {
+            t1++;// nếu t1 tăng lên 1 thì t2 được giảm 1
+            t2--;
+            if(t2<0) t2=0;
+        }
+        else t2++;
+    }
+    cout<<t1+t2;
+}
+

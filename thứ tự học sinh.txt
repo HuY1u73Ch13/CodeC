@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
+ll n,i;
+struct abc
+{
+    int toan,tin;
+    string s;
+};
+abc a[100005];
+bool sx(abc m,abc n)
+{
+    if (m.s<n.s)  return true;
+    else if(m.s==n.s)
+        {
+            if (m.toan+m.tin<n.toan+n.tin) return true;
+            else if(m.toan+m.tin==n.toan+n.tin) 
+            if (m.toan<n.toan||m.toan==n.toan) return true;
+        }
+return false;
+}
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+    cin>>n;
+    for (i=1;i<=n;i++) cin>>a[i].s>>a[i].toan>>a[i].tin;
+    sort(a+1,a+1+n,sx);
+    for (i=1;i<=n;i++) cout<<a[i].s<<" "<<a[i].toan<<" "<<a[i].tin<<endl;
+}
+    

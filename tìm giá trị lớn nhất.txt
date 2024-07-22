@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define nmax 1000000
+#define ll long long
+using namespace std ;
+ll a[nmax+5],ma[nmax+5],mi[nmax+5],n,kq=-1e18;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i];
+        ma[i]=max(ma[i-1],a[i]);// đọc dữ liệu và tạo ra mảng ma[] là max các giá trị từ a1 đến ai
+    }
+    for(int i=n;i>0;i--)
+    {
+        mi[i]=min(mi[i+1],a[i]);// tạo ra mảng mi[] là min các giá trị từ a[i] đến a[n]
+    }
+    for(int j=2;j<=n-1;j++)
+    {
+        kq=max(kq,ma[j-1]+a[j]-mi[j+1]);// chi cần duyệt sô và cập nhật kq
+    }
+    cout<<kq;
+}

@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll n,a[1000005],b[1000005],m[1000005],l=0;
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n;
+    ll r=n;
+    for(int i=1;i<=n*2;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=1;i<=n;i++) b[i]=a[i];
+    for(int i=n+1;i<=n*2;i++) m[i]=a[i];
+    for(int i=1;i<=n*2;i++)
+    {
+        if(i%2==1) {l++;cout<<b[l]<<" ";}
+        else {r++;cout<<m[r]<<" ";}
+    }
+}

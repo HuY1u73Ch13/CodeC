@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+bool nt(long long x)
+{
+    for (long long i = 2; i <= sqrt(x);i++)
+        if(x%i==0)
+        return false;
+    return x>1;
+}
+ll t,n;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        int k = 1;
+        for(int i = 2 ; i <= sqrt(n) ; i++)
+        {
+            if(n%i==0)
+            {
+                 k=i;
+                 break;
+            }
+        }
+        if(k==1)
+            cout<<"No"<<'\n';
+        else
+        {
+            if(nt(k)&&nt(n/k))
+                cout<<"Yes"<<'\n';
+            else
+                cout<<"No"<<'\n';
+        }
+    }
+}
+#include<bits/stdc++.h>
+using namespace std;
+int t,u,n;
+int main()
+{
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;        
+        u=0;
+        for(int i=2;i<=sqrt(n);++i)
+        if(n%i==0) 
+        {
+            u++; 
+            if(u>1) i=n; 
+        }
+        if(u==1)cout<<"Yes"<<endl;
+        else cout<<"No"<<endl;
+    }
+}
+    
+    

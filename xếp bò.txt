@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+#define N 100001
+#define base 2111992
+#define ll long long
+using namespace std ;
+int f[N],n,k;
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n>>k;
+    for(int i=0;i<=k;i++) f[i]=i+1; // so cach tu 1 den k
+    for(int i=k+1;i<=n;i++) f[i]=(f[i-1]+f[i-k-1]) % base;// so cach tu k+1 den n
+    cout<<f[n];
+}
+

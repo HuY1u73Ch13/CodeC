@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long n,s=0,i=1;
+int main()
+{
+    cin>>n;
+    while(i<=n)
+    {
+        long long t=n/i;
+        s+=(n/t-i+1)*t;
+        i=n/t+1;
+    }
+    cout<<s;
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll n;
+ll sum(ll n)
+{
+    ll res = sqrt(n);
+    ll ans = 0;
+    for (int i = 1; i <= res; i++)
+    {
+        ans += n / i;
+    }
+    ans = 2 * ans - (res * res);
+    return ans;
+}
+
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    //freopen("test.inp","r",stdin);
+    //freopen("test.out","w",stdout);
+    cin >> n;
+    cout << sum(n);
+    return 0;
+}

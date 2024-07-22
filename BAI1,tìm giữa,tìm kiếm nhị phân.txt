@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll l,r,L,R,mx=1e18,res;
+ll tong(ll n,ll m)
+{
+    return (m-n+1)*(n+m)/2;
+}
+int main ()
+{
+    cin>>l>>r;
+    L=l;R=r;
+    while(L<=R)
+    {
+        ll m=((L+R)/2);
+        ll s1=tong(l,m);
+        ll s2=tong(m+1,r);
+        if(abs(s1-s2)<mx)
+        {
+            mx=abs(s1-s2);
+            res=m;
+        }
+        if(s1>s2) R=m-1;
+        else L=m+1;
+    }
+    cout<<res;
+}

@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int dem(string b, string a)
+{
+    ll a1 = a.length(),b1 = b.length(),s = 0;
+    for (int i = 0; i <= a1 - b1; i++)
+    {
+        for (int j = 0; j < b1; j++)
+        {
+            if (a[i+j] != b[j])
+                break;
+        }
+        if (j == b1)
+        {
+           s++;
+        }
+    }
+    return s;
+}
+int main()
+{
+   string a,b;
+   cin>>a>>b;
+   cout<<dem(b,a);
+   return 0;
+}

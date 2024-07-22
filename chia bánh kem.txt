@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll n,s=1,a[1000005];
+int main ()
+{
+    cin>>n;
+    for(int i=1;i<=sqrt(n);i++)
+    {
+        if(n%i==0)
+        {
+            a[s]=i;
+            s++;
+        }
+        if(i!=n/i and n%i==0)
+        {
+            a[s]=n/i;
+            s++;
+        }
+    }
+    s--;// bỏ "0"
+    sort(a+1,a+1+s);
+    for(int i=1;i<=s;i++)
+    {
+        cout<<a[i]<<"\n";
+    }
+}
+
+
+#include<bits/stdc++.h>
+#define el '\n'
+#define ll long long
+const ll mod = 1e9 + 7;
+const int N = 1e6;
+using namespace std;
+ll n, res = 0,k;
+set<ll> s;
+int main()
+{
+    ios_base::sync_with_stdio(false); 
+    cin.tie(0);
+    cin >> n;
+    for(ll i = 1; i <= sqrt(n);i++)
+    {
+        if(n % i == 0)
+        {
+            s.insert(i);
+            if(i * i != n)
+                s.insert(n / i) ;
+        }
+    }
+    for(auto it : s)
+        cout << it << el;
+}

@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define N 2000005
+using namespace std;
+ll n,n1=2,k=0;
+string f[N];
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    f[0]="0";f[1]="1";
+    cin>>n;
+    while(f[k].size()<n)
+    {
+        f[n1++]=f[k]+"0";
+        f[n1++]=f[k]+"1";
+        k++;
+    }
+    for(int i=k;i<n1;i++)
+    {
+        cout<<i-254<<" "<<f[i]<<'\n';
+    }
+}

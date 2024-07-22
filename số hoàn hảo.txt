@@ -1,0 +1,51 @@
+/*#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll n;
+bool kt(ll n)
+{
+    ll s(1),i,m(sqrt(n));
+    for (i=2;i<=m;i++)
+    {
+        if (n%i==0)
+        {
+            s+=i;
+            s+=n/i;
+        }
+    }
+    if (m*m==n) s-=m;
+    if (s==n) return true;
+    return false;
+}
+int main()
+{
+    cin>>n;
+    if (kt(n)) cout<<"YES";
+    else cout<<"NO";
+}
+*/
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,s=0,m,b;
+int main ()
+{
+    cin>>a;
+    m=sqrt(a);
+    for(int i=1;i<=m;i++)
+    {
+        if(a%i==0)
+        {
+            s=s+i;
+            b=a/i;
+            if(b!=a)
+            s=s+b;
+        }
+
+
+    }
+        if(s==a)
+            cout<<"YES";
+        else
+            cout<<"NO";
+}

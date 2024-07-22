@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+int c[100001],n;
+
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n;
+
+    while(n--)
+    {
+        string s;
+        cin>>s;
+        memset(c,0,sizeof(c));
+        bool kt=true;
+        if(s=="B")
+        {
+            cout<<"NO"<<"\n";
+            ;
+            continue;
+        }
+        for(int i=1;i<s.size();i++)
+        {
+            if(s[i]=='A')
+            {
+                if(s[i-1]=='B' && c[i-1]==0) c[i]=1;
+            }
+            else //s[i]=="B"
+            {
+                if(s[i-1]=='A')
+                {
+                    if(c[i-1]==0) c[i]=1;
+                }
+                else
+                {
+                   if(c[i-1]==0)
+                   {
+                       kt=false;
+                       break;
+                   }
+                }
+            }
+         }
+        if(s[s.size()-1]=='B' && c[s.size()-1]==0) kt=false;
+        if(kt) cout<<"YES"<<"\n";
+        else cout<<"NO"<<"\n";
+    }
+}

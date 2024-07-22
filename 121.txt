@@ -1,0 +1,86 @@
+/*#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,x;
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {        cin>>x;
+        cout<<x<<" ";
+
+    }
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b[1000005],mn=1e18,mx=-1e18;
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b[i];
+        mn=min(mn,b[i]);
+        mx=max(mx,b[i]);
+
+    }
+    cout<<mn<<" "<<mx;
+
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b[1000005];
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b[i];
+    }
+    for(int i=1;i<= a-1;i++)
+    for(int j=1+i;j<=a;j++)
+        if(b[i]>b[j])
+        {
+            swap(b[i],b[j]);
+        }
+    for(int i=1;i<=a;i++)
+        cout<<b[i]<<" ";
+}
+*/
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+void quicksort(long a[],long l,long h)
+{
+    long i=l,j=h,x=a[(l+h)/2];
+    do
+    {
+        while(a[i]<x) i++;
+        while(a[j]>x) j--;
+        if(i<j)
+        {
+            swap(a[i],a[j]);
+            i++;
+            j--;
+        }
+    }
+    while(i<=j);
+        if(l<j) quicksort(a,l,j);
+        if(i<h) quicksort(a,i,h);
+}
+int main ()
+{
+    int n,i,a[100000];
+    cin>>a[i];
+    quicksort(a,1,n);
+    for(long i=1;i<=9;i++) cout<<a[i]<<" ";
+    return 0;
+
+}
+
+
+

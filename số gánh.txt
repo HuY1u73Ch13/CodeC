@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>
+using namespace std;
+string a,dau,cuoi;
+long long n,s,dai,kq,dem=0;
+int main()
+{
+    cin>>a;
+    kq=-1;
+    if(a.size()>=3){
+      for(int i=3; i<=a.size(); i+=2 )
+    {
+        dem++;
+        dau=a.substr(0,dem);
+        cuoi=a.substr(a.size()-dem,dem);
+        if(dau==cuoi)
+        {
+            kq=max(kq, dem);
+        }
+
+    }}
+    cout<<kq;
+
+}
+    #include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+string s1,s,s2;
+ll dem=0,i,j;
+main()
+{
+    cin>>s;
+    i=0;
+    j=s.size()-1;
+    while(i<j)
+    {
+        s1=s1+s[i];
+        s2=s[j]+s2;
+        if(s1==s2 && (s1.size()*2<s.size()))
+            dem=max(dem,(ll)s1.size());
+        i++;
+        j--;
+    }
+    if(dem==0)
+        cout<<"-1";
+    else
+        cout<<dem;
+
+
+}
+#pragma GCC optimize ("O3")
+#include<bits/stdc++.h>
+#define ll long long
+#define nmax 1000005
+#define mod 1000000007
+#define LamCoKhan()  signed main()
+#define fort(i,a,n) for(ll i=a,_n=n;i>=_n;i--)
+#define forc(i,a,n) for(ll i=a,_n=n;i<=_n;i++)
+#define FASTER ios_base::sync_with_stdio(0);cin.tie(0); cout.tie(0);
+using namespace std;
+string s;
+LamCoKhan()
+{
+    ll dem = 0 ,x=-1;
+    cin >> s;
+    if(s.size() >= 3)
+    {
+        for(ll i = 3 ; i <= s.size() ; i=i+2)
+        {
+            dem++;
+            if(s.substr(0 , dem) == s.substr(s.size() - dem , dem))
+            {
+                x = max(x , dem);
+            }
+        }
+    }
+    cout << x;
+}
+    
+    

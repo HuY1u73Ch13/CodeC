@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+char str[5][80], tmp[80];
+int main()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> str[i];
+    }
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = i + 1; j < 5; j++)
+        {
+            if (strcmp(str[i], str[j])>0) //so sang do dai 2 chuoi
+            {
+                strcpy(tmp, str[i]); //copy toan bo ky tu cua chuoi nay qua chuoi khac
+                strcpy(str[i], str[j]);
+                strcpy(str[j], tmp);
+            }
+        }
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        cout << str[i] << " ";
+    }
+    cout << endl;
+}
+/*
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a;
+int main ()
+{
+    cin>>a;
+    for(int i=0;i<a;i++)
+    {
+        for(int j=i+1;j<a+1;j++)
+        {
+            cout<<i<<" "<<j<<endl;;
+        }
+
+    }
+}
+*/

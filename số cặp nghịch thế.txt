@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+int n,q,a[10005],l,r,s=0;
+int main ()
+{
+//    freopen("Invert.inp","r",stdin);
+//    freopen("Invert.out","w",stdout);
+    cin>>n>>q;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i];
+    }
+    while(q--)
+    {
+        int s=0;
+        cin>>l>>r;
+        for(int i=l;i<=r;i++)
+        for(int j=l;j<i;j++)
+        if(a[j]>a[i]) s++;
+        cout<<s<<"\n";
+    }
+}

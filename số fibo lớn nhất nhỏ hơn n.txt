@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+bool fibo(ll n)
+{
+    ll f0=1;
+    ll f1=1;
+    ll fn=0;
+    if(n<=1) return false;
+    while(fn<=n)
+    {
+        fn=f0+f1;
+        f0=f1;
+        f1=fn;
+        if(fn==n) return true;
+    }
+    return false;
+}
+int main()
+{
+    ll a;
+    cin>>a;
+    while(a--)
+    {
+        if(fibo(a))
+        {
+            cout<<a;
+            break;
+        }
+    }
+}

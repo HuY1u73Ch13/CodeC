@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+#define nmax 1000000007
+#define ll long long
+using namespace std;
+ll n,a[1000005],k;
+void dayso()
+{
+    a[1]=1;
+    a[2]=1;
+    for (ll i=3;i<=1000000;i++)
+    a[i]=((3*a[i-1])%nmax-a[i-2]%nmax+nmax)%nmax;
+}
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    nxn();
+    dayso();
+    cin>>n;
+    cout<<a[n]%nmax;
+}
+    

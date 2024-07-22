@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long f[5505][5505],m,n,res=0;
+string a,b;
+int main()
+{
+    cin>>a>>b;
+    a=' '+a;
+    b=' '+b;
+    for(int i=1;i<a.size(); i++)
+    {
+        for(int j=1;j<b.size();j++)
+    {
+        if(a[i]==b[j])
+            f[i][j]=f[i-1][j-1]+1;
+        else f[i][j]=0;
+        res=max(res,f[i][j]);
+    }
+    }
+    cout<<res;
+}

@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+#define N 101
+#define ll long long
+using namespace std ;
+int n,w,a[N],b[N],f[N][N],c[N];
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n>>w;
+    for(int i=1;i<=n;i++) cin>>a[i]>>b[i];
+    for(int i=1;i<=n;i++)
+    for(int j=1;j<=w;j++)
+    if(a[i]>j) f[i][j]=f[i-1][j];
+    else
+    {
+        int t=j/a[i];
+        for(int k=1;k<=t;k++)
+        f[i][j]=max(f[i-1][j],f[i-1][j-k*a[i]]+k*b[i]);
+    }
+    cout<<f[n][w]<<"\n";
+    int i=n,j=w;
+    while(i>0 and j>0)
+    {
+        if(f[i][j]==f[i-1][j]) i--;
+        else
+        {
+            int t=j/a[i];
+            for(int k=1;k<=t;k++)
+            if(f[i][j]==f[i-1][j-k*a[i]]+k*b[i])
+            {
+                c[i]=k;
+                j=j-k*a[i];
+                i--;
+                break;
+            }
+        }
+    }
+    for(int i=1;i<=n;i++)
+    {
+        if(c[i]>0) cout<<i<<" "<<c[i];
+        cout<<"\n";
+    }
+}

@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define N 100001
+#define pii pair<ll,ll>
+#define fi first
+#define se second
+#define ll long long
+using namespace std ;
+pii a[N];
+ll n,d,res=0;
+int main ()
+{
+    cin>>n>>d;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i].fi>>a[i].se;
+    }
+    sort(a+1,a+n+1);
+    ll l=1,r=1,t=a[1].se;
+    while(l<=r and r<=n)
+    {
+        while(a[r].fi-a[l].fi<=d and r<=n)
+        {
+             res=max(res,t);
+             r++;
+             t+=a[r].se;
+        }
+        t-=a[l].se;
+        l++;
+    }
+    cout<<res;
+}

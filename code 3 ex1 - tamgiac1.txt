@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a;
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        for(int j=1;j<=i;j++) //chi so * bang chi so dong
+        {
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+}

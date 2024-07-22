@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string s;
+ll res,d=0;
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>s;
+    if(s.size()%2==1)
+    {
+        cout<<-1;
+        return 0;
+    }
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]==')') d++;
+        else
+        {
+            d--;
+            if(d<0)
+            {
+                res=1;
+                d=1;
+            }
+        }
+    }
+    cout<<res+d/2;
+}

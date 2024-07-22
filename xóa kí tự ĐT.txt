@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+#define N 2005
+#define ll long long
+using namespace std ;
+string s;
+int n,k;
+bool ktdx(int l,int r)
+{
+    while(l<=r)
+        if(s[l]!=s[r]) return false;
+        else
+            {
+                l++;
+                r--;
+            }
+    return true;
+}
+int main ()
+{
+    freopen("erasechar.inp", "r", stdin);
+    freopen("erasechar.out", "w", stdout);
+    bool ok=false;
+    int l=0,r;
+    cin>>n>>k;
+    cin>>s;
+    while(l<=k-1)
+    {
+        r=n-1-k+l;
+        if(ktdx(l,r))
+        {
+            ok=true;
+            break;
+        }
+        l++;
+    }
+    if(!ok) cout<<"NO";
+    else for(int j=l;j<=r;j++)
+        cout<<s[j];
+
+}

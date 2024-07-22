@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string a;
+ll b=0;
+int main ()
+{
+    getline(cin,a);
+    for(int i=0;i<a.size();i++)
+        b=max(b,(ll)(a[i]));
+    cout<<char(b);
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string s;
+int main ()
+{
+    cin>>s;
+    sort(s.begin(),s.end());
+    cout<<s[s.size()-1];
+}

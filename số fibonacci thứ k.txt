@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll n,a[1005],k;
+void fibonacci()
+{
+    a[1]=a[2]=1;
+    for (ll i=3;i<=70;i++)
+    a[i]=a[i-1]+a[i-2];
+}
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    nxn();
+    cin>>n;
+    fibonacci();
+    while(n--)
+    {
+        cin>>k;
+        cout<<a[k]<<endl;
+    }
+}

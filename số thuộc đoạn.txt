@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long m,n;
+long double a,b;
+int main()
+{
+    cin>>a>>b;
+    m=ceil(a);
+    n=floor(b);
+    //cout<<n-m+1;
+    cout<<m<<" "<<n;
+}

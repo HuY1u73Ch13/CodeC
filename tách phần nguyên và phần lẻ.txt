@@ -1,0 +1,11 @@
+tách phần nguyên và phần lẻ
+code
+#include<bits/stdc++.h>
+#define ll long long 
+using namespace std ;
+int main ()
+{
+    long double a;
+    cin>>a;
+    cout<<(ll)(a)<<" "<<(a-(ll)(a));
+}

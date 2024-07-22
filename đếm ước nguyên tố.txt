@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+#define N 600000
+#define ll long long
+using namespace std ;
+ll m,n,f[N],tmp,kq(0);
+bool NT[N+5];
+void sang()
+{
+    memset(NT,1,sizeof(NT));
+    NT[0]=NT[1]=0;
+    for(int i=2;i<=sqrt(N);i++)
+        if(NT[i])
+            for(int j=i*i;j<=N;j+=i)
+            NT[j]=0;
+}
+void snt(ll k,ll t)
+{
+    for(int i=2;i<=k;i++)
+    {
+        if(NT[i])
+        {
+            tmp=i;
+            while(tmp<=k)
+            {
+                f[i]=f[i]+t*k/tmp;
+                tmp*=i;
+            }
+        }
+    }
+}
+int main ()
+{
+    sang();
+    cin>>n>>m;
+    snt(n,1);
+    snt(m,-1);
+    snt(n-m,-1);
+    for(int i=1;i<=n;i++)
+    {
+        if(f[i]>0) kq++;
+    }
+    cout<<kq;
+}

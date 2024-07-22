@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll n,a[30005],s=0,b[30005];
+int main()
+{
+    cin>>n;
+    for (int i=1;i<=n;i++)
+    {
+        cin>>a[i];  // 1 3 2 
+        b[i]=b[i-1]+a[i];// 1 4 6
+    }
+    for (int i=1;i<n;i++)
+    {
+        s=s+a[i]*(b[n]-b[i]);
+    }
+    cout<<s;
+}

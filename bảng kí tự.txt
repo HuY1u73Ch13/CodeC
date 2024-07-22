@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+#define ll long long 
+using namespace std ;
+ll a,b;
+char ch;
+int main ()
+{
+    cin>>a>>b;
+    cin>>ch;
+    for (int i=1;i<=a;i++)
+    {
+        for (int i=1;i<=b;i++)
+            cout<<ch;
+        cout<<endl;
+    }
+}

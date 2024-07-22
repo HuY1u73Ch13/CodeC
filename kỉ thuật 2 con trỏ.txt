@@ -1,0 +1,27 @@
+kỷ thuật 2 con trỏ 
+
+cho dãy A={a1,a2,...,an} (10^9>ai<0)
+tìm tổng ai+a(i+1)+....+aj>=T
+              (j-i+1)min
+cin 2 7 9 1 4 8
+s    2 9 18 19 23 31
+res=n+1;
+c1: for(int i=1;i<=n;i++)
+      for(int j=i;j<=n;i++)
+     {
+           if(s[j]-s[i-1]>=t)
+           {
+              min=min(res,j-i+1)
+           }
+      }
+c2:
+    res=n+1;
+    i=1;j=i; P=s[j]-s[i-1];
+   while(i<=j and j<=n)
+   { 
+         if(P<T) P+=a[++j];
+        else {    res=min(res,j-i+1);
+                     P=P-a[i];
+                     i++;
+               }         
+     }

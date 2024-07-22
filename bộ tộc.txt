@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,f[1000005],k,s(0);
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    memset(f,0,sizeof(f));
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>k;
+        f[k]++;
+    }
+    for(int i=1;i<=a;i++)
+    {
+        s=s+f[i]/2;
+    }
+    cout<<s;
+
+}
+

@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+#define fi first
+#define se second
+#define oo 1e9
+using namespace std;
+const int K=oo+5;
+const int N=2005 +5;
+int i,x,ge,a;
+string s1;
+set<int > s;
+int main()
+{
+    cin>>a;
+    while(a--)
+    {
+        cin>>s1>>x;
+        if(s1=="INSERT")
+            s.insert(x);
+        if(s1=="DELETE")
+            s.erase(x);
+        if(s1=="ASK")
+        {
+            int m=int (s.count(x));
+            if(m)
+                cout<<"Yes"<<endl;
+            else
+                cout<<"No"<<endl;
+        }
+        if(s1=="G")
+        {
+            auto ti=s.upper_bound(x);
+            if (ti == s.end()) cout<<-1<<endl;
+            else
+                {
+
+                    cout<<*ti<<endl;
+                }
+        }
+        if(s1=="L")
+            {
+                auto it=s.lower_bound(x);
+                if (it==s.begin()) cout<<"-1"<<endl;
+            else{
+                    it--;
+                    cout<<*it<<endl;
+                }
+            }
+    }
+}

@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define name "N0510B"
+using namespace std;
+ll m,n,p,a[105][105],i,j,b[105][105],c[105][105],k;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>m>>n>>p;
+    for (i=1;i<=n;i++)
+    {
+        for (j=1;j<=n;j++)
+            cin>>a[i][j];
+    }
+    for (i=1;i<=n;i++)
+    {
+        for (j=1;j<=p;j++)
+            cin>>b[i][j];
+    }
+    for (i=1;i<=m;i++)
+    {
+        for (j=1;j<=p;j++)
+            {
+                c[i][j]=0;
+                for (k=1;k<=n;k++)
+                    c[i][j]=c[i][j]+a[i][k]*b[k][j];
+            }
+    }
+    for (i=1;i<=m;i++)
+    {
+        for (j=1;j<=p;j++)
+        {
+            cout<<c[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+}

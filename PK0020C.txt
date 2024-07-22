@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define nmax 10000001
+using namespace std ;
+ll n,t=0,a;
+bool NT[nmax+5];
+void sang()
+{
+    fill(NT+1,NT+1000000+1,true);
+    NT[0]=NT[1]=false ;
+    for(int i=1;i<=sqrt(nmax);i++)
+        if(NT[i])
+        for(int j=i*i;j<=nmax;j=j+i)
+        NT[j]=false;
+}
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    //freopen("test.inp","r",stdin);
+    //freopen("test.out","w",stdout);
+    sang();
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=i;j<=n-i;j++)
+        {
+            a=n-i-j;
+            if(NT[i] && NT[j] && NT[a] && a>=j && j>=i)
+            {
+                cout<<i<<" "<<j<<" "<<a<<"\n";t++;
+            }
+        }
+    }
+    if(t==0) cout<<-1;
+}

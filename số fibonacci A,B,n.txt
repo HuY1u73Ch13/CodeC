@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define mod 1000000007
+long long f[1000000];
+long long sol(long long x,long long k,long long l)
+{
+    f[0]=x;
+    f[1]=k;
+    for(int i=2;i<=1000000;i++)
+        f[i]=(f[i-1]%mod+f[i-2]%mod)%mod;
+      return f[l]%mod;
+}
+long long t,n,a,b;
+int main()
+{
+    cin>>t;
+    for(int i=1;i<=t;i++)
+    {
+        cin>>a>>b>>n;
+        cout<<sol(a,b,n)<<endl;
+    }
+    return 0;
+}
+#include<bits/stdc++.h>
+using namespace std;
+long long t,f[1000000],i,m=1e9+7,a,b,n;
+int main () {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>b>>n;
+        f[0]=a%m; f[1]=b%m;
+        for(i=2;i<=1000000;i++)
+            f[i]=((f[i-1]%m)+(f[i-2]%m))%m;
+        cout<<f[n]<<'\n';
+    }
+}

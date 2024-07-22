@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#define mod 1000000000
+using namespace std;
+long long n,k,a[100005];
+int main()
+{
+    ios::sync_with_stdio();
+    cin.tie();cout.tie();
+     cin>>n;
+   for(int i=1;i<=n;i++)
+        a[i]=i;
+   while(n--)
+   {
+       k=0;
+       for(int i=1;i<=n;i++)
+       a[++k]=(a[i]+a[i+1])%mod;
+    }
+    cout<<a[1];
+
+}
+    

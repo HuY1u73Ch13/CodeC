@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll k,q,i;
+ll cnp(ll k)
+{
+    ll d(1),c(1000000),g,t;
+    while (d<=c)
+    {
+        g=(d+c)/2;
+        t=g*g*g-2*g+5;
+        if (t==k) return g;
+        if (t>k) c=g-1;
+        else d=g+1;
+    }
+    return -1;
+}
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    cin>>q;
+    for (i=1;i<=q;i++)
+    {
+        cin>>k;
+        cout<<cnp(k)<<"\n";
+    }
+}
+    

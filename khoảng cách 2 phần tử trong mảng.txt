@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b[1000005],f[1000005],mn=1e18,mx=-1e18;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b[i];
+        f[i]=min(mn,b[i]);
+        mn=f[i];
+    }
+    for(int j=1;j<=a;j++)
+        mx=max(mx,b[j]-f[j]);
+    cout<<mx;
+}
+    

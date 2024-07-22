@@ -1,0 +1,59 @@
+mảng liên kết 
+for(int i=1;i<=n;i++)
+{
+    L[i]=i-1;
+    R[i]=i+1;
+}
+    L[1]=0;
+    R[n]=0;
+vd
+Có đội bóng n người từ n-1 đến n,đứng chụp ảnh.Khi đứng chụp ảnh có m lượt thao tác như sau .
+(n,m<=10^5),i-j người thứ i ra khỏi hàng bắt tay khán giả và sau đó đứng vào bên trái người thứ j 
+(có m lượt như thế ) .Tìm người đứng bên phải và bên trái của mỗi người ?.
+Test :  1 2 3 4         out: 
+      !4 3!                0 4 
+         !1 3!             3 0 
+         !2 4!             4 2 
+         !4 3!             1 3 
+tt1: 2 1 3 4 
+tt2: 1 3 2 4 
+tt3: 1 4 3 2 
+
+
+code
+#include<bits/stdc++.h>
+#define ll long long
+#define N 100001
+using namespace std ;
+ll L[N],R[N];
+ll n,m;
+using namespace std;
+int main()
+{
+    freopen("chupanh.inp","r",stdin);
+    freopen("chupanh.out","w",stdout);
+    cin>>n>>m;
+    for(int i=1;i<=n;i++)
+    {
+        L[i]=i-1;
+        R[i]=i+1;
+    }
+    R[n]=0;
+    for(int k=1;k<=m;k++)
+    {
+        ll i,j;
+        cin>>i>>j;
+        // xoa phan tu thu i
+        R[L[i]]=R[i];
+        L[R[i]]=L[i];
+        // chen phan tu thu i vao ben trai phan tu j
+        R[L[j]]=i;
+        L[i]=L[j];
+        R[i]=j;
+        L[j]=i;
+    }
+    for(int i=1;i<=n;i++)
+        cout<<L[i]<<" "<<R[i]<<"\n";
+     return 0;
+}
+ 

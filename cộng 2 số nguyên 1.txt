@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+string a,b;
+char n,m;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>a>>b;
+    n=a[a.size()-1]-48;//chuyen ki tu ve so
+    m=b[0]-48;//chuyen ki tu ve so
+    a[a.size()-1]=char(n+m+48);// chuyen so ve ki tu
+    cout<<a;
+}

@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define N 100005
+#define ll long long
+using namespace std;
+long long a[N];
+long long n, d=0;
+void sang()
+{
+    fill(a+1,a+N+1,1);
+    a[0]=a[1]=0;
+    for (ll i=2; i*i<=N; i++)
+        if (a[i]==1)
+        {
+            for (ll j=i*i; j<=N; j+=i)
+            a[j]=0;
+        }
+
+}
+int main()
+{
+    //freopen("spnum.inp", "r", stdin);
+    //freopen("spnum.out", "w", stdout);
+    sang();
+    cin>>n;
+    for (ll i=2; i<=sqrt(n); i++)
+        if (a[i]) d++;
+    cout<<d;
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int tong[1000005],dem,l,r;
+void sieve()
+{
+    for(int i=1; i<=1000000; i++)
+        for(int j=i; j<=1000000; j+=i)
+            tong[j]+=i;
+    for(int i=1; i<=1000000; i++)
+        tong[i]-=i;
+}
+int32_t main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    sieve();
+    cin>>l>>r;
+    for(int i=l; i<=r; i++)
+    {
+        ios_base::sync_with_stdio(0);
+        if(tong[i]<=r)
+        {
+            int b=tong[i];
+            if(tong[b]==i && b>=i)
+                dem++;
+        }
+    }
+
+    cout<<dem;
+}
+    

@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);   
+    cout.tie(0);  
+    ll n,i,s=0,mx=0,cuoi;
+    cin>>n;
+    long long a[n+5];
+    for (i=1;i<=n;i++)
+    {
+        cin>>a[i];
+        if (a[i]%2==0)
+        {
+            s++;
+            if (s>mx)
+               {
+                  mx=s;
+                  cuoi=i;
+               }
+        }
+        else s=0;
+    }
+    cout<<mx<<endl;
+    for (i=cuoi-mx+1;i<=cuoi;i++) cout<<a[i]<<" ";
+
+}
+    

@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll n,t,c(0),l(0);
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    for(ll i=2;i<=sqrt(n);i++)
+    if(n%i==0)
+    {
+        t=0;
+        while(n%i==0) {t++;n/=i;}
+        if(t%2==0) c+=t;
+        else l+=t;
+    }
+    if(n!=1) l++;
+    cout<<c<<"\n"<<l;
+}

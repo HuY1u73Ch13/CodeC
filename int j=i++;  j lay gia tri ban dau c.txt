@@ -1,0 +1,2 @@
+//int j=i++; // j lay gia tri ban dau cua i luc ma i chua duoc tang
+    //int j1=++i; // j lay gia tri cua i sau khi i tang

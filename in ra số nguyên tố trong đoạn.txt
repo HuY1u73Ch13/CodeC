@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long n,dem=0,a[100005],k;
+bool isPrime(long long x)
+{
+    if(x<2)  return false;
+    for(int i=2;i*i<=x;i++)
+      if(x%i==0)  return false ;
+   return true;
+}
+int main()
+{
+    ios::sync_with_stdio();
+    cin.tie();cout.tie();
+    cin>>n>>k;
+    for(int i=n;i<=k;i++)
+        if(isPrime(i))  {cout<<i<<" "; dem++;}
+    if(dem==0) cout<<-1;
+
+
+}
+    

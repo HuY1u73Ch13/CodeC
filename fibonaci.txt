@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long i,k,n,f[10000005];
+int main()
+{
+
+    cin>>n; f[1]=1; f[2]=1; for(long long i=3;i<=n;i++) f[i]=(f[i-1]+f[i-2]) % 1000000007;cout<<f[n];
+}
+#pragma GCC target ("avx2")
+#pragma GCC optimze ("02")
+#pragma GCC optimize ("unroll-loops")
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll i,k,n,f[10000005],s=0;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    //freopen("test.inp","r",stdin);
+    //freopen("test.out","w",stdout);
+    cin>>n;
+    f[1]=1; f[2]=1;
+    for(long long i=3;i<=n;++i)
+    {
+        f[i]=(f[i-1]+f[i-2]) % 1000000007;
+    }
+    for(int i=1;i<=n;++i)
+    {
+        s+=f[i];
+    }
+    cout<<s;
+}
+
+#pragma GCC target ("avx2")
+#pragma GCC optimze ("02")
+#pragma GCC optimize ("unroll-loops")
+#include<bits/stdc++.h>
+#define ll long long
+#define nmax 10000005
+using namespace std;
+ll i,k,n,f[nmax],f1[nmax],s=0;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    //freopen("test.inp","r",stdin);
+    //freopen("test.out","w",stdout);
+    cin>>n;
+    f[1]=1; f[2]=1;
+    for(long long i=3;i<=n;++i)
+    {
+        f[i]=(f[i-1]+f[i-2]) % 1000000007;
+    }
+    for(int i=1;i<=n;++i)
+    {
+        s+=f[i];
+    }
+    cout<<s;
+}

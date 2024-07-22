@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nmax 3005
+#define fi first
+#define se second
+ll x,y,z,n,m,a[nmax][nmax],b[nmax][nmax],c[nmax][nmax];
+queue<pair<ll,ll> > q;
+pair<ll,ll> p;
+void bfs(ll x2, ll y2)
+{
+    if(x2 <= 0 || x2 > m || y2 <= 0 || y2 > n || a[x2][y2] == 1 || c[x2][y2] == 1)
+        return;
+    q.push({x2,y2});
+    b[x2][y2] = b[x][y]+1;
+    c[x2][y2] = 1;
+}
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    cin>>m>>n;
+    for(ll i = 1 ; i <= m ; i++)
+        for(ll j = 1 ; j <= n ; j++)
+        cin>>a[i][j];
+    q.push({1,1});
+    c[1][1] = 1;
+    while(!q.empty())
+    {
+        p = q.front();
+        x = p.fi;
+        y = p.se;
+        q.pop();
+        bfs(x+1,y);
+        bfs(x-1,y);
+        bfs(x,y+1);
+        bfs(x,y-1);
+    }
+    if(b[m][n] == 0)
+        cout<<-1;
+    else
+        cout<<b[m][n];
+}

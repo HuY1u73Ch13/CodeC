@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b,mn=-1e18;
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b;
+        mn=max(mn,b);
+    }
+    cout<<fixed<<setprecision(2)<<(long double)mn;
+}

@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#pragma GCC target("avx2")
+#pragma GCC optimize("O2")
+#pragma GCC optimize("unroll-loops")
+#define N 1000000
+using namespace std;
+typedef long long ll;
+ll a[N];
+ll demuoc(ll a)
+{
+    ll s=0,m;
+    for(int i=1;i<=sqrt(a);i++)
+    {
+        if(a%i==0) s=s+2;
+    }
+    m=sqrt(a);
+    if(m*m==a) s=s-1;
+    return s;
+}
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("GHH.inp","r",stdin);
+    freopen("GHH.out","w",stdout);
+    ll n,i,d=0;
+    vector <ll> t;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        cin>>a[i];
+        if(demuoc(a[i])) t.push_back(a[i]);
+    }
+    cout<<t.size()<<'\n';
+    for(i=0;i<t.size();i++)
+    {
+        cout<<t[i]<<'\n';
+    }
+}

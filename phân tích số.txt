@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define task "BAI4"
+int main() {
+ freopen(task".inp", "r", stdin);
+ freopen(task".out", "w", stdout);
+ ios::sync_with_stdio(0);
+ cin.tie(0);
+ cout.tie(0);
+ long long n;
+ cin >> n;
+ long long T = (n % 3) ? (n - 2) * (n - 1) / 2 - 3 * (n / 2 - 1) : 
+ (n - 2) * (n - 1) / 2 - 3 * (n / 2 - 1)+2;
+ cout << T / 6;
+}

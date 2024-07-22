@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define nmax 10000007
+using namespace std;
+ll i,a[105],x,c=0;
+void fibo()
+{
+    a[1]=a[2]=1;
+    for (i=3;i<=50;i++) a[i]=a[i-1]+a[i-2];
+}
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    nxn();
+    cin>>x;
+    fibo();
+    for (i=50;i>=1;i--)
+    {
+        if (a[i]<=x)
+        {
+            x=x-a[i];
+            c++;
+        }
+    }
+    cout<<c;
+}

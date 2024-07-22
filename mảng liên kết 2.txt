@@ -1,0 +1,13 @@
+mảng liên kết 2
+vd :
+cho dãy số A:{a1,a2,...,an}
+tìm phần từ giống nớ đứng trước gần nó nhất 
+CIN:                                       A   2 3 2 1 3 2 
+P(lưu chỉ số đứng trước nó )       4 6 5 
+link :                                            0 0 1 0 2 3 
+
+for(int i=1;i<=n;i++)
+{
+        Link[i]=P[a[i]]; 
+        P[a[i]]=i;
+}

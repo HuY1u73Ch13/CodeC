@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll a,b,i,s=0;
+bool check(ll n)
+{
+    ll t=0,k;
+    while (n>0)
+    {
+        k=n%10;
+        t=t+k*k;
+        n/=10;
+    }
+    if (t%2==0) return true;
+    return false;
+}
+int main()
+{
+    cin>>a>>b;
+    for (i=a;i<=b;i++) if (check(i)) s++;
+    cout<<s;
+}

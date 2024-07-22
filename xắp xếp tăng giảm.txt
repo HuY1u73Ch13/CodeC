@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b[10000005];
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+        cin>>b[i];
+    sort(b+1,b+1+(a/2));
+    sort(b+(1+a/2),b+a+(1+a/2),greater<int>());
+    for(int i=1;i<=a;i++)
+        cout<<b[i]<<" ";
+}

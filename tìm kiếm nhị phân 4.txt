@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define name "SB04B"
+#define nmax 10000000
+using namespace std;
+ll n,i,x,t,a[1000005];
+ll cnp()
+{
+    ll d=1,c=n,g,m;
+    while (d<=c)
+    {
+        g=(d+c)/2;
+        if (a[g]==x) return x;
+        if (a[g]<x)
+        {
+            m=a[g];
+            d=g+1;
+        }
+        else
+            c=g-1;
+    }
+    return m;
+}
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    for (i=1;i<=n;i++) cin>>a[i];
+    sort (a+1,a+1+n);
+    cin>>t;
+    while (t--)
+    {
+        cin>>x;
+        cout<<cnp()<<"\n";
+    }
+}

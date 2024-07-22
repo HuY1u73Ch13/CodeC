@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define nmax 10000001
+using namespace std ;
+bool NT[nmax+5];
+int a,n,k=0;
+ll b[nmax+5];
+void sang()
+{
+    fill(NT+1,NT+nmax,1);
+    NT[0]=NT[1]=false ;
+    for(int i=2;i<=sqrt(nmax);i++)
+        if(NT[i])
+        for(int j=i*i;j<=nmax;j=j+i)
+        NT[j]=false;
+}
+void khoitao()
+{
+    sang();
+    ios::sync_with_stdio(0);
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a;
+        if(NT[a])
+        {
+            k++;
+            b[k]=a;
+        }
+    }
+}
+void solve()
+{
+    if(k==0) {cout<<-1;return;}
+    sort(b+1,b+k+1);
+    deque<int> kq;
+    while(k>0)
+    {
+        kq.push_back(b[k]);
+        k--;
+        if(k>0)
+        {
+            kq.push_front(b[k]);
+            k--;
+        }
+    }
+    for(auto x:kq) cout<<x<<" ";
+}
+int main ()
+{
+    khoitao();
+    solve();
+}

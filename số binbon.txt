@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define mx -1e18
+using namespace std;
+ll t,i,j,sum,mxx;
+string n;
+bool ktnt(ll sum)
+{
+    for (j=2;j<=sqrt(sum);j++)
+    {
+        if (sum%j==0) return false;
+    }
+    return sum>1;
+}
+void tt()
+{
+    for (j=0;j<n.length();j++)
+    {
+        ll k=n[j]-48;
+        sum+=k;
+        mxx=max(k,mxx);
+    }
+}
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>t;
+    for (i=1;i<=t;i++)
+    {
+        cin>>n;
+        mxx=mx;
+        sum=0;
+        tt();
+        sum=sum*10+mxx;
+        if (ktnt(sum)) cout<<"YES"<<endl;else cout<<"NO"<<endl;
+    }
+}
+   
+    

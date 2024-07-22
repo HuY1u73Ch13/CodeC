@@ -1,0 +1,18 @@
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll n,k,s=0,t=1;
+int main ()
+{
+    cin>>n>>k;
+    s=k;
+    while(s<n)
+    {
+        k=k*2;
+        s=s+k;
+        t=t+1;
+    }
+    cout<<t;
+}
+    

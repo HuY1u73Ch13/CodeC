@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll i=2,dem=0,k,n;
+bool ktnt(ll a)
+{
+    if (a<2) return false;
+    else if (a!=2 && a%2==0) return false;
+    else if (a!=3 && a%3==0) return false;
+    else for (ll i=5;i<=sqrt(a);i++)
+    {
+        if (a%i==0) return false;
+    }
+    return true;
+}
+int main()
+{
+    //freopen("test.inp","r",stdin);
+    //freopen("test.out","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n>>k;
+    while(true)
+    {
+	    if (ktnt(i)) dem++;
+	    if (dem == k)
+		    if (n == i)
+		    {
+			    cout << "OK";
+			    return 0;
+		    }
+		    else
+            {
+			    cout << "KO";
+			    return 0;
+		    }
+	    i++;
+    }
+}
+
+

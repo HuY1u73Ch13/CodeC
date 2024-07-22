@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,x[1000005],s=0,i,mx=1,dem=1;
+int main ()
+{
+    cin>>a;
+    for(i=1;i<=a;i++)
+    {
+        cin>>x[i];
+    }
+    sort(x+1,x+1+a);
+    a=a+1;
+    x[a]=-1;
+    for (i=2;i<=a;i++)
+    {
+        if (x[i]==x[i-1]) dem++;
+        else
+        {
+            mx=max(mx,dem);
+            dem=1;
+        }
+    }
+    cout<<mx;
+}
+

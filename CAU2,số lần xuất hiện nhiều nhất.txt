@@ -1,0 +1,89 @@
+#include <bits/stdc++.h>
+#pragma GCC target("avx,avx2,fma")
+#pragma GCC optimize ("O2")
+#pragma GCC optimize ("unroll-loops")
+#define N 1000001
+using namespace std;
+typedef long long ll;
+ll d[N];
+int main()
+{
+    //freopen("CAU2.INP","r",stdin);
+    //freopen("CAU2.OUT","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll n,i,k;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        cin>>k;
+        d[k]++;
+    }
+    cout<<*max_element(d,d+N);
+}
+
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll a[1000005],b[1000005],f[1000005];
+ll n,z=1,mx=-1e18;
+int main()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    for (int i=1;i<=n;i++)
+    cin>>a[i];
+    sort (a+1,a+1+n);
+    b[1] = a[1];
+    memset(f,0,sizeof(f));
+    f[1] = 1;
+    for (int i=2;i<=n;i++)
+    {
+        if (a[i] == b[z])
+        {
+            f[z]++;
+            mx = max (mx , f[z]);
+        }
+        else
+        {
+            b[++z] = a[i];
+            f[z] = 1;
+        }
+    }
+    cout<<mx;
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,x[1000005],s=0,i,mx=1,dem=1;
+int main ()
+{
+    freopen("CAU2.inp","r",stdin);
+    freopen("CAU2.out","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>a;
+    for(i=1;i<=a;i++)
+    {
+        cin>>x[i];
+    }
+    sort(x+1,x+1+a);
+    a=a+1;
+    x[a]=-1;
+    for (i=2;i<=a;i++)
+    {
+        if (x[i]==x[i-1]) dem++;
+        else
+        {
+            mx=max(mx,dem);
+            dem=1;
+        }
+    }
+    cout<<mx;
+}

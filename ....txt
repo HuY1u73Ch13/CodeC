@@ -1,0 +1,114 @@
+#include<bits/stdc++.h>
+using namespace std ;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    int a,b,s=0;
+    cin>>a;
+    for (int i=1;i<=a;i++)
+    {
+        cin>>b;
+        if (b%2==0) s=s+1;
+
+    }
+    cout<<s;
+}
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+bool ktnt(ll k)
+{
+    if (k<2) return false;
+    else for (ll i=2;i<=sqrt(k);i++)
+    {
+        if (k%i==0) return false;
+    }
+    return true;
+}
+int main ()
+{
+    ll a,i=2,d=0,s=0;
+    cin>>a;
+    while(1)
+    {
+        if(i==true)
+            {s=s+i;d++;i++;}
+        else
+            i++;
+        if(d==a)
+        {
+            cout<<s;
+            break;
+        }
+
+    }DP4
+}
+#include<bits/stdc++.h>
+#define N 1001
+using namespace std ;
+int n,s,a[N],f[N],vet[N];
+int main ()
+{
+    cin>>n>>s;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i];
+    }
+    f[0]=1;
+    for(int i=1;i<=n;i++)
+    for(int j=s;j>=a[i];j--)
+    {
+        if(f[j-a[i]]==1)
+        {
+            f[j]=1;
+            if(vet[j]==0) vet[j]=i;
+        }
+    }
+        cout<<f[s]<<" ";
+}
+*/
+#include <bits/stdc++.h>
+#define N 101
+#define ll long long
+using namespace std;
+ll f[2500][2500],m,n,dx[N],dy[N];
+string a,b;
+int main()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>m>>n;
+    cin>>a>>b;
+    a=' '+a;
+    b=' '+b;
+    for(int i=1;i<=m;i++)
+    for(int j=1;j<=n;j++)
+    {
+        if(a[i]==b[j])
+            f[i][j]=f[i-1][j-1]+1;
+        else
+            f[i][j]=max(f[i-1][j],f[i][j-1]);
+    }
+    int i=m-1,j=n-1;
+    while(i>0 and j>0)
+    {
+        if(f[i][j]==f[i-1][j]) i--;
+        else if(f[i][j]=f[i][j-1]) j--;
+        else
+        {
+            dx[i]=1;
+            dy[j]=1;
+            i--;
+            j--;
+        }
+    }
+    for(int i=1;i<m;i++)
+        if(dx[i]==1) cout<<i<<'\n';
+    for(int i=1;i<=m;i++)
+        if(dx[i]==1) cout<<i<<" ";
+    cout<<"\n";
+    for(int j=1;j<=n;j++)
+    if(dy[j]==1) cout<<j<<" ";
+}

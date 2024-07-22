@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+struct st
+{
+    ll tu,mau;
+};
+bool sx(st a,st b)
+{
+    if (a.tu*b.mau<b.tu*a.mau) return true;
+    return false;
+}
+int main()
+{
+    nxn();
+    st a[10005];
+    ll n,i,gcdd;
+    cin>>n;
+    for (i=1;i<=n;i++)
+    {
+        cin>>a[i].tu>>a[i].mau;
+    }
+    sort(a+1,a+1+n,sx);
+    gcdd=__gcd(a[1].tu,a[1].mau);
+    for (i=1;i<=n;i++) cout<<a[i].tu/gcdd<<" "<<a[i].mau/gcdd<<endl;
+}

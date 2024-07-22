@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b[1000005],s=0;
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b[i];
+        s+=b[i];
+    }
+    for(int i=1;i<=a;i++)
+    {
+        if(b[i]==s-b[i])
+        {
+            cout<<b[i];
+            return 0;
+        }
+    }
+    cout<<"N";
+}

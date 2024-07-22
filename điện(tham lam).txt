@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,c,b[100],s=0,d=0;
+int main ()
+{
+    cin>>a>>c;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b[i];
+    }
+    sort(b+1,b+1+a,greater<ll>());
+    for(int i=1;i<=a;i++)
+    {
+        s=s+b[i]-1;
+        {
+            if(s>=c)
+            {
+               cout<<i;
+               return 0;
+            }
+        }
+    }
+    cout<<-1;
+}

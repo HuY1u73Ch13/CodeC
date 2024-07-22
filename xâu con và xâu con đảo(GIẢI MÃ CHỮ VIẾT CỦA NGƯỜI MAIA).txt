@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string x,s;
+int m,n,d1[52],d2[52],dem=0;
+bool kt()
+{
+    for(int i=0;i<52;i++)
+        if(d1[i]==d2[i]) return true;
+    return false;
+}
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>m>>n;
+    cin>>x;
+    cin>>s;
+    // đánh dấu kí tự xuất hiện trong mảng từ 1 đến 52:
+    // từ 1 đến 26 là kí tự hoa
+    // từ 26 đến 52 là kí tự thường
+    for(int i=0;i<m;i++)
+         if('A'<=x[i] && x[i]<='Z') d1[x[i]-'A']++;
+         else d1[x[i]-'a'+26]++;
+    for(int i=0;i<m;i++)
+        if('A'<=s[i] && s[i]<='Z') d2[s[i]-'A']++;
+        else d2[s[i]-'a'+26]++;
+    // cửa sổ trượt đếm độ chêng lệch từ m đến n
+    if(kt()) dem++;
+    for(int i=m;i<n;i++)
+    {
+        if('A'<=s[i] && s[i]<='Z') d2[s[i]-'A']++;
+        else d2[s[i]-'a'+26]++;
+        if('A'<=s[i-m] && s[i-m]<='Z') d2[s[i-m]-'A']--;
+        else d2[s[i-m]-'a'+26]--;
+        if(kt()) s1++;
+    }
+    cout<<dem;
+}

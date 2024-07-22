@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define nmax 1000000007
+using namespace std;
+bool ktnt(ll a)
+{
+    if (a<2) return false;
+    else if (a!=2 and a%2==0) return false;
+    else if (a!=3 and a%3==0) return false;
+    else for (ll i=5;i<=sqrt(a);i++)
+    {
+        if (a%i==0) return false;
+    }
+    return true;
+}
+int main()
+{
+    int n,i,s(0);
+    cin>>n;
+    for (i=1;i<=nmax;i++)
+    {
+        if (ktnt(i)) s++;
+        if (s==n)
+        {
+            cout<<i;
+            break;
+        }
+    }
+}
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+const int nmax=1e7;
+bool NT[nmax+5];
+ll n;
+void sang()
+{
+    memset(NT,true,sizeof(NT));
+    NT[0]=NT[1]=false ;
+    for(int i=2;i<=sqrt(nmax);i++)
+        if(NT[i])
+        for(int j=i*i;j<=nmax;j=j+i)
+        NT[j]=false;
+}
+int main ()
+{
+    sang();
+    cout<<"So nguyen to thu : ";
+    cin>>n;
+    for(int i=2;i<nmax;i++)
+    {
+        if(NT[i]==true) n--;
+        if(n==0)
+        {
+            cout<<"La : "<<i;
+            return 0;
+        }
+    }
+}

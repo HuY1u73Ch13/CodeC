@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll tong(ll a,ll b)
+{
+    return a+b;
+}
+int main ()
+{
+    ll x,y;
+    cin>>x>>y;
+    cout<<tong(x,y);
+}

@@ -1,0 +1,22 @@
+
+#include<bits/stdc++.h>
+#define ll long long 
+using namespace std;
+long long a,i,n,x,q;
+int main()
+{
+    cin>>n;
+    map<ll,ll>m;
+    for(i=1;i<=n;i++)
+    {
+        cin>>a;
+        m[a]++;
+    }
+    cin>>q;
+    for(i=1;i<=q;i++)
+    {
+        cin>>x;
+        cout<<m[x]<<'\n';
+    }
+}
+    

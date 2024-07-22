@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll f[2500][2500],m,n;
+string a,b;
+int main()
+{
+    cin>>m>>n;
+    cin>>a>>b;
+    a=' '+a;
+    b=' '+b;
+    for(int i=1;i<=m;i++)
+    for(int j=1;j<=n;j++)
+    {
+        if(a[i]==b[j])
+            f[i][j]=f[i-1][j-1]+1;
+        else
+            f[i][j]=max(f[i-1][j],f[i][j-1]);
+    }
+    cout<<f[m][n];
+}
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll f[2500][2500],m,n;
+string a,b;
+int main()
+{
+    cin>>m>>n;
+    cin>>a>>b;
+    for(int i=1;i<=m;i++)
+    {for(int j=1;j<=n;j++)
+    {
+        if(a[i-1]==b[j-1])
+            f[i][j]=f[i-1][j-1]+1;
+        else
+            f[i][j]=max(f[i-1][j],f[i][j-1]);
+    }
+    }
+    cout<<f[m][n];
+}

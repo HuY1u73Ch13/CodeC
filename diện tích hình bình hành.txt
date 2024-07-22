@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+float xa, ya, xb, yb, xc, yc,a1,b2,a2,b1;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>xa>>ya>>xb>>yb>>xc>>yc;
+    a1=xb-xa; //cout<<a<<endl;
+    b1=yb-ya; //cout<<b<<endl;
+    a2=xc-xa ;//cout<<c<<endl;
+    b2=yc-ya;
+    cout<<abs(a1*b2-a2*b1);
+}
+    

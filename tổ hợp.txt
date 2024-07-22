@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long gt(int n)
+{
+    long long s=1;
+    for (int i=1 ; i<=n ; i++)
+     {
+		s*=i;
+	}
+    return s;
+}
+long long S(int k, int n) {
+    return  gt(n)/(gt(k)*gt(n-k));
+}
+int main(){
+    int q,n,k;
+    cin>>q;
+    while(q--)
+    {
+        cin>>n>>k;
+        cout<<S(k,n)<<'\n';
+    }
+}
+#include<bits/stdc++.h>
+using namespace std;
+long long n;
+int main()
+{
+    cin>>n;
+    long long c = n*(n-1)*(n-2)/6;
+    cout<<c;
+}

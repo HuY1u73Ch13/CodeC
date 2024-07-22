@@ -1,0 +1,32 @@
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll n,i,x,t,a[1000005];
+ll tknhiphan()
+{
+    ll d=1,c=n,g,x,kq;
+    while(d<=c)
+    {
+        g=(d+c)/2;
+        if(a[g]>=x) {kq=g; c=g-1;}
+        else d=g+1;
+
+    }
+    return a[g];
+}
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    for (i=1;i<=n;i++) cin>>a[i];
+    sort (a+1,a+1+n);
+    cin>>t;
+    while (t--)
+    {
+        cin>>x;
+        cout<<tknhiphan()<<"\n";
+    }
+}

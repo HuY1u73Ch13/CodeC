@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std ;
+string a,b,c="";
+long long m;
+int main ()
+{
+    cin>>a>>b;
+    for(int i=97;i<=122;i++)
+    {
+        m=0;
+        for(int j=0;j<a.size();j++)
+        {
+            if(a[j]==i) m=1;
+        }
+        if(m==1)
+        {
+            for(int j=0;j<b.size();j++)
+            {
+                if(b[j]==i)
+                {
+                    c=c+b[j];
+                    break ;
+                }
+            }
+        }
+    }
+    if(c=="")
+        cout<<0;
+    else
+    cout<<c;
+
+
+}
+    

@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define name "IBS1704B"
+using namespace std;
+ll n,a[100005],q,x,i;
+void nxn()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+}
+ll cnp(ll x)
+{
+    ll d(1),c=n,g;
+    while (d<=c)
+    {
+        g=(d+c)/2;
+        if (a[g]==x) return 0;
+        if (a[g]>x&&a[g-1]<x)
+        {
+            if (abs(x-a[g])>abs(x-a[g-1]))
+                return abs(x-a[g-1]);
+                    else
+                        return abs(x-a[g]);
+        }
+        if (a[g]<x&&a[g+1]>x)
+        {
+            if (abs(x-a[g])>abs(x-a[g+1]))
+                return abs(x-a[g+1]);
+                    else
+                        return abs(x-a[g]);
+        }
+        if (a[g]>x) c=g-1;else d=g+1;
+    }
+}
+int main()
+{
+    nxn();
+    cin>>n;
+    for (i=1;i<=n;i++) cin>>a[i];
+    sort(a+1,a+1+n);
+    a[0]=0;
+    cin>>q;
+    for (i=1;i<=q;i++)
+    {
+        cin>>x;
+        if (a[1]>x) cout<<abs(x-a[1])<<"\n";
+        else
+            if (x>a[n]) cout<<abs(x-a[n])<<"\n";
+                else 
+                    cout<<cnp(x)<<"\n";
+    }
+}

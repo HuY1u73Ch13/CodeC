@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#define nmax 1000000
+#define ll long long
+using namespace std ;
+ll s(0),n,b[nmax];
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>b[i];
+    }
+    while(n--)
+    {
+        if (b[n] + b[n-1] > b[n-2] && b[n] + b[n-2] > b[n-1]
+        && b[n-2] + b[n-1] > b[n]) s++;
+    }
+    cout<<s;
+}

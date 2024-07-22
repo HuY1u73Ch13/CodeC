@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long n,k;
+string s;
+int main()
+{
+    cin>>n>>k;
+    while (n!=0)
+    {
+        s=char(((n%k)+48))+s;
+        n=n/k;
+    }
+    cout<<s;
+}
+    

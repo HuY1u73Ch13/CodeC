@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll s=0;
+ll demso(ll n) //đếm số lượng chữ số của a 
+{
+    while(n>0)
+    {
+        n=n/10;
+        s++;
+    }
+    return s;
+}
+bool testarmstrong(ll n)     // Kiểm tra số armstrong
+{                            // VD: a=1023 ,4 chữ số 
+    ll numDigit=demso(n);    // 
+    int tmp=n,d=0,last;
+    while(tmp>0)
+    {
+        last=tmp%10; // lấy chữ số cuối cùng  vd  1023 % 10 = 3
+        tmp=tmp/10;  // xóa chữ số cuối       vd  1023 / 10 = 102
+        d=d+pow(last,numDigit); // => 1^4 + 0^4 + 2^4 + 3^4 so sánh với 1023
+    }
+    if(d==n) // nếu  1^4 + 0^4 + 2^4 + 3^4 == 1023 
+        return true ;
+    else return false ;
+}
+int main ()
+{
+    ll a;
+    cin>>a;
+    if(testarmstrong(a)==true)
+    {
+        cout<<"YES";
+    }
+    else
+    {
+        cout<<"NO";
+    }
+}

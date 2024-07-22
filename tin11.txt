@@ -1,0 +1,24 @@
+#pragma GCC optimize ("unroll-loops")
+#include<bits/stdc++.h>
+#define ll long long
+const int nmax = 1e6+5;
+using namespace std ;
+ll mn=-1e18,a,b,s(0),f[nmax];
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b;{cout<<b<<" ";mn=max(mn,b);}
+        if(b%2==0) s+=b;
+        f[b]++;
+    }
+    cout<<"\n"<<s<<"\n";
+    for(int i=1;i<=mn;i++)
+    {
+        if(f[i]>0) cout<<i<<" ";
+    }
+}

@@ -1,0 +1,45 @@
+C1:
+#include <bits/stdc++.h>
+using namespace std;
+string s;
+int d[26];
+int main()
+{
+    freopen("char.inp","r", stdin);
+    freopen("char.out", "w", stdout);
+    getline(cin,s);
+    for(int i=0; i<=s.size()-1; i++)
+        if (s[i]!=' ')
+        {
+             if (s[i]<'a') d[s[i]+32-'a']++;
+             else d[s[i]-'a']++;
+        }
+
+    for (int i=0; i<=25; i++)
+        if (d[i]>0) cout<<char(i+97)<<" "<<d[i]<<'\n';
+    return 0;
+}
+C2;
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+string s;
+ll d1[26];
+int main ()
+{
+    getline(cin,s);
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]!=' ')
+        {
+            if(s[i]<'a' )d1[s[i]+32]++;
+            else d1[s[i]]++;
+        }
+    }
+    for(int i=97;i<122;i++)
+    {
+        if(d1[i]>0)
+        cout<<char(i)<<" "<<d1[i]<<'\n';
+    }
+}
+

@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#pragma GCC target("avx,avx2,fma")
+#pragma GCC optimize ("O2")
+#pragma GCC optimize ("unroll-loops")
+#define N 100001
+using namespace std;
+typedef long long ll;
+ll a[N];
+int main()
+{
+    freopen("TROCHOI.INP","r",stdin);
+    freopen("TROCHOI.OUT","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll m,n,k,i,d=0;
+    cin>>m>>n;
+    k=m*n;
+    for(i=1;i<=k;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a+1,a+k+1);
+    for(i=1;i<=k;i+=n)
+    {
+        d++;
+        if(d%2==0)
+        {
+            reverse(a+i,a+n+i);
+        }
+    }
+    d=0;
+    for(i=1;i<=k;i++)
+    {
+        cout<<a[i]<<" ";
+        d++;
+        if(i%n==0) cout<<'\n';
+    }
+}

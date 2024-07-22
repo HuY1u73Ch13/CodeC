@@ -1,0 +1,74 @@
+#pragma GCC target ("avx2")
+#pragma GCC optimze ("02")
+#pragma GCC optimize ("unroll-loops")
+#include<bits/stdc++.h>
+#define N 10000000
+#define ll long long
+using namespace std ;
+ll a,tam=0;
+string d;
+bool NT[N+5];
+void sang()
+{
+    memset(NT,true,sizeof(NT));
+    NT[0]=NT[1]=false ;
+    for(int i=2;i<=sqrt(N);i++)
+        if(NT[i])
+        for(int j=i*i;j<=N;j=j+i)
+        NT[j]=false;
+}
+ll  snt(ll a)
+{
+    int s=1;
+    sang();
+    if(NT[a])
+    {
+        while(a>=10)
+        {
+            tam=a/10;
+            if(NT[tam])
+            {
+                s++;a/=10;
+            }
+            else break;
+        }
+    }
+    return s;
+}
+ll scs(ll a)
+{
+    int s=1;
+    while(a>=10)
+    {
+        a=a/10;s++;
+    }
+    return s;
+}
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    //freopen("BAI1.inp","r",stdin);
+    //freopen("BAI1.out","w",stdout);
+    cin>>a;
+    for(int i=pow(10,a-1);i<=pow(10,a);i++)
+    {
+        ll n=snt(i);
+        ll m=scs(i);
+        if(m==n) {cout<<i<<" ";}
+    }
+}
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+int n;
+int main ()
+{
+    freopen("BAI1.inp","r",stdin);
+    freopen("BAI1.out","w",stdout);
+    cin>>n;
+    if(n==1) cout<<2<<'\n'<<3<<'\n'<<5<<'\n'<<7;
+    if(n==2) cout<<23<<'\n'<<29<<'\n'<<31<<'\n'<<37<<'\n'<<53<<'\n'<<59<<'\n'<<71<<'\n'<<73<<'\n'<<79;
+    if(n==3) cout<<233<<'\n'<<239<<'\n'<<293<<'\n'<<311<<'\n'<<313<<'\n'<<317<<'\n'<<373<<'\n'<<379<<'\n'<<593<<'\n'<<599<<'\n'<<719<<'\n'<<733<<'\n'<<739<<'\n'<<797;
+}

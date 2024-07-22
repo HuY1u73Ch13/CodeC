@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll f(ll p, ll q, ll N)
+{
+    ll res;
+    while (N > 0)
+    {
+        N--;
+        p=p*10;
+        res = p / q;
+        p=p%q;
+    }
+    return res;
+}
+ int main()
+{
+     ll p,q,N;
+     cin>>p>>q>>N;
+     cout <<f(p, q, N);
+}
+

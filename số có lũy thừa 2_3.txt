@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b,n,m,s,d;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>a>>b;
+    for(int i=a;i<=b;i++)
+    {
+        n=i;m=i;s=0;d=0;
+        while(n!=1)
+        {
+            if(n%2==0)
+            {
+                s++;
+                n=n/2;
+            }
+            else
+            {
+                break;
+            }
+        }
+        while(m!=1)
+        {
+            if(m%3==0)
+            {
+                d++;
+                m=m/3;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if((pow(2,s)*pow(3,d))==i)
+        {
+            cout<<i<<"="<<"2^"<<s<<"*"<<"3^"<<d<<endl;
+        }
+        //cout<<s<<" "<<d<<endl;
+    }
+}

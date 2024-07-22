@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+string n;
+int f[10000005],s;
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    for (int i=1;i<=n.size();i++)
+    {
+        f[i]=n[i-1]-48;
+        s+=f[i];
+    }
+    sort(f+1,f+1+n.size(),greater<int>());
+    if (s%3==0 && f[n.size()]==0)
+    {
+        for (int i=1;i<=n.size();i++)
+            cout<<f[i];
+    }
+    else cout<<-1;
+    return 0;
+}

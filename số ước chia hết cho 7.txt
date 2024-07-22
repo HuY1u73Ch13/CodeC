@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll a[105],n,dem=0;
+int tonguoc(ll x)
+{
+    ll uoc=0;
+    for(int i=1;i<=sqrt(x);i++)
+    {
+        if(x%i==0)
+        uoc=uoc+2;
+    }
+    ll u=sqrt(x);
+    if(u*u==x)
+    {
+        uoc--;
+    }
+    return uoc;
+
+}
+int main ()
+{
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=1;i<=n;i++)
+    for(int j=i+1;j<=n;j++)
+    if((tonguoc(a[i])+tonguoc(a[j]))%7==0) dem++;
+    cout<<dem;
+}

@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define nmax 1000000
+using namespace std ;
+int f[nmax + 5],a;
+void demuoc()
+{
+    fill(f+1,f+1+nmax,1);
+    for (int i=2;i<=nmax;++i){
+        for (int j=i;j<=nmax;j+=i)
+            f[j]++;
+    }
+}
+int main ()
+{
+    demuoc();
+    cin>>a;
+    cout<<f[a];
+}

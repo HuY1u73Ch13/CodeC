@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define name "N0435D"
+using namespace std;
+ll n,i,mx[1000005],mn[1000005],a[1000005],mxx(-1e18);
+int main()
+{
+    //freopen("test.inp","r",stdin);
+    //freopen("test.out","w",stdout);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n;
+    mx[0]=-1e18;
+    for (i=1;i<=n;i++)
+    {
+        cin>>a[i];
+        mx[i]=max(mx[i-1],a[i]);
+    }
+    mn[n+1]=1e18;
+    for (i=n;i>=0;i--)
+        mn[i]=min(mn[i+1],a[i]);
+    for (i=1;i<n;i++)
+        mxx=max(mxx,mx[i-1]+a[i]-mn[i+1]);
+    cout<<mxx;
+}

@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b;
+void doicho()
+{
+    ll tam=a;
+    a=b;
+    b=tam;
+}
+int main ()
+{
+    cin>>a>>b;
+    doicho();
+    cout<<a<<" "<<b;
+
+}

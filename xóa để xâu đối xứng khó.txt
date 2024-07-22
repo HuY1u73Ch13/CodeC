@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define N 1000005
+using namespace std ;
+ll t,n,f[N],z;
+string s,m,m1;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>t;
+    while(t--)
+    {
+        z=0;
+        cin>>n>>s;
+        for(int i=0;i<n;i++)
+        {
+            m=s;
+            m.erase(m.begin()+i);
+            m1=m;
+            reverse(m.begin(),m.end());
+            if(m==m1) f[++z]=i;
+        }
+        cout<<z<<'\n';
+        for(int i=1;i<=z;i++)
+        {
+            cout<<f[i]<<" ";
+        }
+        cout<<'\n';
+    }
+}

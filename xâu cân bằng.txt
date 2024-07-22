@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define N  200001
+using namespace std ;
+ll n,dem(0),kq(0),a[N],t[N],d[N];
+string s;
+int main ()
+{
+    freopen("test.inp","r",stdin);
+    freopen("test.out","w",stdout);
+    cin>>n>>s;
+    a[0]=1;
+    memset(a,0,sizeof(0));
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]=='0') {dem++;}
+        else {dem--;}
+        ll u=dem+n;
+        if(a[u]==0) t[u]=i;
+        else
+        {
+            kq=max(kq,i-t[u]);
+        }
+        a[u]++;
+    }
+    if(dem==0) cout<<n;
+    else cout<<kq;
+}

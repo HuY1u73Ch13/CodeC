@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,s=0;
+int main ()
+{
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        s=s+(a-1)/i;
+    }
+    cout<<s;
+}
+// mỗi a,b thì có c tương ứng 
+// chỉ cần đếm (a,b) là đủ bộ a,b,c
+// với mỗi a sẽ có nhiều giá trị b và ta có thể đếm được các giá trị b dựa vào a

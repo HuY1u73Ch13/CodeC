@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll tcs(ll a)
+{
+    ll s=0,tam;
+    while(a>0)
+    {
+        tam=a%10;
+        s=s+tam;
+        a=a/10;
+    }
+    return s;
+}
+int main ()
+{
+    ll a,b,gcdd;
+    cin>>a>>b;
+    a=tcs(a);
+    b=tcs(b);
+    gcdd=__gcd(a,b);
+    cout<<a/gcdd*b;
+}

@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll a,b[100000005],k=1,mx;
+int main ()
+{
+    cin>>a;
+    for (int i=1;i<=a;i++)
+    {
+        cin>>b[i];
+        mx=b[1];
+        for(int i=1;i<=a;i++)
+        {
+            if (b[i]>=mx)
+            {
+                mx=b[i];
+                k=i;
+            }
+        }
+    }
+    cout<<k;
+}

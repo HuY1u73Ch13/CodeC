@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define nmax 10000000
+using namespace std ;
+bool NT[nmax+5];
+void sang()
+{
+    memset(NT,true,sizeof(NT));
+    NT[0]=NT[1]=false ;
+    for(int i=2;i<=sqrt(nmax);i++)
+        if(NT[i])
+        for(int j=i*i;j<=nmax;j=j+i)
+        NT[j]=false;
+}
+int main ()
+{
+    sang();
+    ll a,b,s=0;
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b;
+        if(NT[b]==true)
+            s++;
+    }
+    cout<<s
+}
+#include<bits/stdc++.h>
+#define ll long long
+#define nmax 10000001
+using namespace std ;
+bool NT[nmax+5];
+ll a,s=0;
+void sang()
+{
+    fill(NT+1,NT+1000000+1,true);
+    NT[0]=NT[1]=false ;
+    for(int i=1;i<=sqrt(nmax);i++)
+        if(NT[i])
+        for(int j=i*i;j<=nmax;j=j+i)
+        NT[j]=false;
+}
+int main ()
+{
+    sang();
+    ll a,b,s=0;
+    cin>>a;
+    for(int i=1;i<=a;i++)
+    {
+        cin>>b;
+        if(NT[b]==true)
+            s++;
+    }
+    cout<<s;
+}

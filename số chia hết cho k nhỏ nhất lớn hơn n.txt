@@ -1,0 +1,15 @@
+#pragma GCC optmize("O2")
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std ;
+ll n,k;
+int main ()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin>>n>>k;
+    if (n%k==0) cout<<n;
+    else
+    cout<<n/k*k+k;
+}

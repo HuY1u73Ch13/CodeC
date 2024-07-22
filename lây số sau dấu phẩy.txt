@@ -1,0 +1,13 @@
+Yêu cầu: Viết chương trình nhập vào 2 số nguyên a, b. In ra a/b (a chia b lấy nguyên), a%b (a chia b lấy dư), a/b (a chia b lấy thực, lấy 2 chữ số sau dấu phẩy). 
+Giới hạn: 0<a,b<=10^9
+code
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    long long a,b;
+    cin>>a>>b;
+    cout<<a/b<<endl;
+    cout<<a%b<<endl;
+    cout<<fixed<<setprecision(3)<<(long double)a/b;
+}
